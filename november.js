@@ -576,7 +576,7 @@ const november11ManFour =
 const november11ManFive =
   "You know he killed Helen, don’t you? He drugged her. She liked to drive fast but she knows these roads and a couple Old Fashioneds isn’t going to launch you off a cliff";
 const november11ManSix =
-  "Milton decides to come clean about a couple disturbing events from Vander’s past. First, he beat the shit the shit out of Milton when he was a senior in high school, and second, Milton caught him jerking off to teenage porn just the other day";
+  "Milton decides to come clean about a couple disturbing events from Vander’s past. First, he beat the shit out of Milton when he was a senior in high school, and second, Milton caught him jerking off to teenage porn just the other day";
 const november11ManSeven =
   "He’s getting written out of the will, the little murdering bastard!” Milton hisses quietly. “I’ll help you if you want, God help me! I’m going to end the curséd life of my own fucking offspring, but no one has ever deserved it more";
 const november11ManEight =
