@@ -1,0 +1,159 @@
+body {
+  background-color: rgb(205, 65, 65);
+}
+
+p {
+  font-family: "Anton", sans-serif;
+}
+
+button {
+  background-color: black;
+  color: lightgray;
+  font-family: "DynaPuff", sans-serif;
+  border: solid darkgray 0.25rem;
+  border-radius: 0.5rem;
+}
+
+.allDays {
+  background-color: rgb(0, 0, 0);
+  color: black;
+  border: solid rgb(168, 166, 163) 0.5rem;
+  border-radius: 0.75rem;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#dayOne {
+  font-family: "Asap", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#dayTwo {
+  font-family: "Convergence", system-ui;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#dayThree {
+  font-family: "Concert One", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#dayFour {
+  font-family: "Reggae One", system-ui;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#dayFive {
+  font-family: "Linden Hill", serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#daySix {
+  font-family: "Domine", serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+#daySeven {
+  font-family: "Vollkorn", serif;
+  font-size: 1.25rem;
+  line-height: 1.35rem;
+}
+
+#dayEight {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.35rem;
+}
+
+#dayNine {
+  font-family: "Almarai", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.35rem;
+}
+
+#dayTen {
+  font-family: "Arvo", serif;
+  font-size: 1.15rem;
+  line-height: 1.25rem;
+}
+
+#dayEleven {
+  font-family: "Bree Serif", serif;
+  font-size: 1.15rem;
+  line-height: 1.25rem;
+}
+
+#dayTwelve {
+  font-family: "Francois One", sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.25rem;
+}
+
+#dayThirteen {
+  font-family: "Truculenta", sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
+#dayFourteen {
+  font-family: "Akaya Telivigala", system-ui;
+  font-size: 1.4rem;
+  line-height: 1.5rem;
+}
+
+#dayFifteen {
+  font-family: "Bitter", serif;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+}
+
+#daySixteen {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+}
+
+#daySeventeen {
+  font-family: "Mate SC", serif;
+  font-size: 1.25rem;
+  line-height: 1.4rem;
+}
+
+/* .allDaysMan {
+    background-color: #de0f0f;
+    color: #d5d3d3;
+    font-family: "Roboto", sans-serif;
+    padding: 1rem;
+} */
+
+/* #dayOne,
+#dayTwo,
+#dayThree,
+#dayFour,
+#dayFive,
+#daySix,
+#daySeven,
+#dayEight,
+#dayNine,
+#dayTen,
+#dayEleven,
+#dayTwelve,
+#dayThirteen,
+#dayFourteen,
+#dayFifteen,
+#daySixteen,
+#daySeventeen {
+    font-size: 1rem;
+    line-height: 1rem;
+    background-color: rgb(0, 0, 0);
+    color: white    ;
+    font-family: "Bree Serif", serif;
+    font-family: "DynaPuff", sans-serif;
+} */
