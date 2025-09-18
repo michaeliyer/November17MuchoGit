@@ -121,6 +121,12 @@ button {
 }
 
 #daySeventeen {
+  font-family: "Asap", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+}
+
+#daySeventeenSeptember {
   font-family: "Mate SC", serif;
   font-size: 1.25rem;
   line-height: 1.4rem;
