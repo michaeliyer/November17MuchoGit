@@ -876,6 +876,50 @@ function hideTextNov17() {
   document.getElementById("daySeventeen").style.color = "black";
 }
 
+
+
+// ------------Sept17_2025----------------
+
+// const september17_2025_One =
+//   "";
+// const september17_2025_Two =
+//   "";
+// const september17_2025_Three =
+//   "";
+// const september17_2025_Four =
+//   " ";
+// const september17_2025_Five =
+//   "";
+// const september17_2025_Six =
+//   "";
+// const september17_2025_Seven =
+//   "";
+// const september17_2025_Eight =
+//   "";
+// const september17_2025_Nine =
+//   " ";
+// const september17_2025_Ten = "* 17_September * (9/17/25).";
+
+// let manOfSeptember17_2025 = () =>
+//   `Setting Up BS`;
+
+// let daySeventeenSeptember_2025 = manOfSeptember17_2025(november17ManOne);
+// console.log(day);
+// document.getElementById("daySeventeen").innerText = daySeventeen;
+
+// const november17Show = document.querySelector("#nov-17-show");
+// november17Show.addEventListener("click", revealTextNov17);
+// function revealTextNov17() {
+//   document.getElementById("daySeventeen").style.color = "white";
+// }
+
+// const november17Hide = document.querySelector("#nov-17-hide");
+// november17Hide.addEventListener("click", hideTextNov17);
+// function hideTextNov17() {
+//   document.getElementById("daySeventeen").style.color = "black";
+// }
+
+
 // ============ STORE JAVASCRIPT CONTENT AFTER LOADING ============
 
 // After all the JavaScript stories have been written, store them
