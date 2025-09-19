@@ -43,13 +43,6 @@ function showStory(dayId) {
   }
 }
 
-function hideStory(dayId) {
-  const element = document.getElementById(dayId);
-  if (element) {
-    element.style.color = "black";
-  }
-}
-
 function showSonnet(dayId) {
   const element = document.getElementById(dayId);
   if (element && originalContent[dayId]) {
@@ -58,7 +51,7 @@ function showSonnet(dayId) {
   }
 }
 
-function hideSonnet(dayId) {
+function hideContent(dayId) {
   const element = document.getElementById(dayId);
   if (element) {
     element.style.color = "black";
@@ -744,14 +737,11 @@ document.addEventListener("DOMContentLoaded", () => {
       .getElementById(`nov-${num}-show-story`)
       ?.addEventListener("click", () => showStory(dayId));
     document
-      .getElementById(`nov-${num}-hide-story`)
-      ?.addEventListener("click", () => hideStory(dayId));
-    document
       .getElementById(`nov-${num}-show-sonnet`)
       ?.addEventListener("click", () => showSonnet(dayId));
     document
-      .getElementById(`nov-${num}-hide-sonnet`)
-      ?.addEventListener("click", () => hideSonnet(dayId));
+      .getElementById(`nov-${num}-hide`)
+      ?.addEventListener("click", () => hideContent(dayId));
   });
 
   // September 17, 2025
@@ -759,12 +749,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .getElementById("sept-17-2025-show-story")
     ?.addEventListener("click", () => showStory("daySeventeenSeptember2025"));
   document
-    .getElementById("sept-17-2025-hide-story")
-    ?.addEventListener("click", () => hideStory("daySeventeenSeptember2025"));
-  document
     .getElementById("sept-17-2025-show-sonnet")
     ?.addEventListener("click", () => showSonnet("daySeventeenSeptember2025"));
   document
-    .getElementById("sept-17-2025-hide-sonnet")
-    ?.addEventListener("click", () => hideSonnet("daySeventeenSeptember2025"));
+    .getElementById("sept-17-2025-hide")
+    ?.addEventListener("click", () => hideContent("daySeventeenSeptember2025"));
 });
