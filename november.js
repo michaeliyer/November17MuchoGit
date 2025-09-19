@@ -23,6 +23,7 @@ const dayIds = [
   "dayFifteen",
   "daySixteen",
   "daySeventeen",
+  "daySeventeenSeptember2025",
 ];
 
 // Store original sonnets IMMEDIATELY before they get overwritten
@@ -876,12 +877,9 @@ function hideTextNov17() {
   document.getElementById("daySeventeen").style.color = "black";
 }
 
-
-
 // ------------Sept17_2025----------------
 
-// const september17_2025_One =
-//   "";
+const september17_2025_One = "This is So UnCool!";
 // const september17_2025_Two =
 //   "";
 // const september17_2025_Three =
@@ -900,25 +898,27 @@ function hideTextNov17() {
 //   " ";
 // const september17_2025_Ten = "* 17_September * (9/17/25).";
 
-// let manOfSeptember17_2025 = () =>
-//   `Setting Up BS`;
+let manOfSeptember17_2025 = () => `${september17_2025_One}. Setting Up BS`;
 
-// let daySeventeenSeptember_2025 = manOfSeptember17_2025(november17ManOne);
-// console.log(day);
-// document.getElementById("daySeventeen").innerText = daySeventeen;
+let daySeventeenSeptember_2025 = manOfSeptember17_2025(september17_2025_One);
+console.log(daySeventeenSeptember_2025);
+document.getElementById("daySeventeenSeptember2025").innerText =
+  daySeventeenSeptember_2025;
 
-// const november17Show = document.querySelector("#nov-17-show");
-// november17Show.addEventListener("click", revealTextNov17);
-// function revealTextNov17() {
-//   document.getElementById("daySeventeen").style.color = "white";
-// }
+// Fixed variables and function names
+const sept_17_2025_Show = document.querySelector("#sept-17-2025_show");
+sept_17_2025_Show.addEventListener("click", revealTextSept17_2025);
 
-// const november17Hide = document.querySelector("#nov-17-hide");
-// november17Hide.addEventListener("click", hideTextNov17);
-// function hideTextNov17() {
-//   document.getElementById("daySeventeen").style.color = "black";
-// }
+function revealTextSept17_2025() {
+  document.getElementById("daySeventeenSeptember2025").style.color = "white";
+}
 
+const sept_17_2025_Hide = document.querySelector("#sept-17-2025_hide");
+sept_17_2025_Hide.addEventListener("click", hideTextSept17_2025);
+
+function hideTextSept17_2025() {
+  document.getElementById("daySeventeenSeptember2025").style.color = "black";
+}
 
 // ============ STORE JAVASCRIPT CONTENT AFTER LOADING ============
 
