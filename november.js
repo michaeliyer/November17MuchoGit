@@ -1,4 +1,4 @@
-// ============ CONTENT TOGGLE FUNCTIONALITY ============
+// ============ INDIVIDUAL CONTENT CONTROL FUNCTIONALITY ============
 
 // Store original HTML content (sonnets) and JavaScript content (stories)
 const originalContent = {};
@@ -34,43 +34,36 @@ dayIds.forEach((dayId) => {
   }
 });
 
-// Toggle state - false = showing JS stories, true = showing sonnets
-let showingSonnets = false;
-
-// Toggle function
-function toggleContent() {
-  const toggleButton = document.getElementById("content-toggle");
-
-  if (showingSonnets) {
-    // Switch to JavaScript stories
-    dayIds.forEach((dayId) => {
-      const element = document.getElementById(dayId);
-      if (element && javascriptContent[dayId]) {
-        element.innerText = javascriptContent[dayId];
-      }
-    });
-    toggleButton.innerText = "Show Sonnets";
-    showingSonnets = false;
-  } else {
-    // Switch to original sonnets
-    dayIds.forEach((dayId) => {
-      const element = document.getElementById(dayId);
-      if (element && originalContent[dayId]) {
-        element.innerHTML = originalContent[dayId];
-      }
-    });
-    toggleButton.innerText = "Show Stories";
-    showingSonnets = true;
+// Individual control functions
+function showStory(dayId) {
+  const element = document.getElementById(dayId);
+  if (element && javascriptContent[dayId]) {
+    element.innerText = javascriptContent[dayId];
+    element.style.color = "white";
   }
 }
 
-// Add event listener to toggle button
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleButton = document.getElementById("content-toggle");
-  if (toggleButton) {
-    toggleButton.addEventListener("click", toggleContent);
+function hideStory(dayId) {
+  const element = document.getElementById(dayId);
+  if (element) {
+    element.style.color = "black";
   }
-});
+}
+
+function showSonnet(dayId) {
+  const element = document.getElementById(dayId);
+  if (element && originalContent[dayId]) {
+    element.innerHTML = originalContent[dayId];
+    element.style.color = "white";
+  }
+}
+
+function hideSonnet(dayId) {
+  const element = document.getElementById(dayId);
+  if (element) {
+    element.style.color = "black";
+  }
+}
 
 // ------------November1----------------
 
@@ -107,17 +100,6 @@ ${november1ManEight}. It was like the day he became a teenager, Satan took his s
 let dayOne = manOfNovember1(november1ManOne);
 console.log(dayOne);
 document.getElementById("dayOne").innerText = dayOne;
-
-const november1Show = document.querySelector("#nov-1-show");
-november1Show.addEventListener("click", revealTextNov1);
-function revealTextNov1() {
-  document.getElementById("dayOne").style.color = "white";
-}
-const november1Hide = document.querySelector("#nov-1-hide");
-november1Hide.addEventListener("click", hideTextNov1);
-function hideTextNov1() {
-  document.getElementById("dayOne").style.color = "black";
-}
 
 // ------------November2----------------
 
@@ -162,17 +144,6 @@ let dayTwo = manOfNovember2(november2ManOne);
 console.log(dayTwo);
 document.getElementById("dayTwo").innerText = dayTwo;
 
-const november2Show = document.querySelector("#nov-2-show");
-november2Show.addEventListener("click", revealTextNov2);
-function revealTextNov2() {
-  document.getElementById("dayTwo").style.color = "white";
-}
-const november2Hide = document.querySelector("#nov-2-hide");
-november2Hide.addEventListener("click", hideTextNov2);
-function hideTextNov2() {
-  document.getElementById("dayTwo").style.color = "black";
-}
-
 // ------------November3----------------
 
 const november3ManOne =
@@ -209,17 +180,6 @@ ${november3ManNine}? How does he handle it when assholes try and weigh in on the
 let dayThree = manOfNovember3(november3ManOne);
 console.log(dayThree);
 document.getElementById("dayThree").innerText = dayThree;
-
-const november3Show = document.querySelector("#nov-3-show");
-november3Show.addEventListener("click", revealTextNov3);
-function revealTextNov3() {
-  document.getElementById("dayThree").style.color = "white";
-}
-const november3Hide = document.querySelector("#nov-3-hide");
-november3Hide.addEventListener("click", hideTextNov3);
-function hideTextNov3() {
-  document.getElementById("dayThree").style.color = "black";
-}
 
 // ------------November4----------------
 
@@ -258,17 +218,6 @@ let dayFour = manOfNovember4(november4ManOne);
 console.log(dayFour);
 document.getElementById("dayFour").innerText = dayFour;
 
-const november4Show = document.querySelector("#nov-4-show");
-november4Show.addEventListener("click", revealTextNov4);
-function revealTextNov4() {
-  document.getElementById("dayFour").style.color = "white";
-}
-const november4Hide = document.querySelector("#nov-4-hide");
-november4Hide.addEventListener("click", hideTextNov4);
-function hideTextNov4() {
-  document.getElementById("dayFour").style.color = "black";
-}
-
 // ------------November5----------------
 
 const november5ManOne =
@@ -305,17 +254,6 @@ ${november5ManNine}, Vander got on board with shopping the gear, decorating a ba
 let dayFive = manOfNovember5(november5ManOne);
 console.log(dayFive);
 document.getElementById("dayFive").innerText = dayFive;
-
-const november5Show = document.querySelector("#nov-5-show");
-november5Show.addEventListener("click", revealTextNov5);
-function revealTextNov5() {
-  document.getElementById("dayFive").style.color = "white";
-}
-const november5Hide = document.querySelector("#nov-5-hide");
-november5Hide.addEventListener("click", hideTextNov5);
-function hideTextNov5() {
-  document.getElementById("dayFive").style.color = "black";
-}
 
 // ------------November6----------------
 
@@ -357,17 +295,6 @@ let daySix = manOfNovember6(november6ManOne);
 console.log(daySix);
 document.getElementById("daySix").innerText = daySix;
 
-const november6Show = document.querySelector("#nov-6-show");
-november6Show.addEventListener("click", revealTextNov6);
-function revealTextNov6() {
-  document.getElementById("daySix").style.color = "white";
-}
-const november6Hide = document.querySelector("#nov-6-hide");
-november6Hide.addEventListener("click", hideTextNov6);
-function hideTextNov6() {
-  document.getElementById("daySix").style.color = "black";
-}
-
 // ------------November7----------------
 
 const november7ManOne =
@@ -404,17 +331,6 @@ ${november7ManEight}. That would have been eternally more difficult if she had n
 let daySeven = manOfNovember7(november7ManOne);
 console.log(daySeven);
 document.getElementById("daySeven").innerText = daySeven;
-
-const november7Show = document.querySelector("#nov-7-show");
-november7Show.addEventListener("click", revealTextNov7);
-function revealTextNov7() {
-  document.getElementById("daySeven").style.color = "white";
-}
-const november7Hide = document.querySelector("#nov-7-hide");
-november7Hide.addEventListener("click", hideTextNov7);
-function hideTextNov7() {
-  document.getElementById("daySeven").style.color = "black";
-}
 
 // ------------November8----------------
 
@@ -453,17 +369,6 @@ let dayEight = manOfNovember8(november8ManOne);
 console.log(dayEight);
 document.getElementById("dayEight").innerText = dayEight;
 
-const november8Show = document.querySelector("#nov-8-show");
-november8Show.addEventListener("click", revealTextNov8);
-function revealTextNov8() {
-  document.getElementById("dayEight").style.color = "white";
-}
-const november8Hide = document.querySelector("#nov-8-hide");
-november8Hide.addEventListener("click", hideTextNov8);
-function hideTextNov8() {
-  document.getElementById("dayEight").style.color = "black";
-}
-
 // ------------November9----------------
 
 const november9ManOne =
@@ -499,17 +404,6 @@ ${november9ManEight}. Helen was a good woman, and no one really knows how she pa
 let dayNine = manOfNovember9(november9ManOne);
 console.log(dayNine);
 document.getElementById("dayNine").innerText = dayNine;
-
-const november9Show = document.querySelector("#nov-9-show");
-november9Show.addEventListener("click", revealTextNov9);
-function revealTextNov9() {
-  document.getElementById("dayNine").style.color = "white";
-}
-const november9Hide = document.querySelector("#nov-9-hide");
-november9Hide.addEventListener("click", hideTextNov9);
-function hideTextNov9() {
-  document.getElementById("dayNine").style.color = "black";
-}
 
 // ------------November10----------------
 
@@ -553,17 +447,6 @@ let dayTen = manOfNovember10(november10ManOne);
 console.log(dayTen);
 document.getElementById("dayTen").innerText = dayTen;
 
-const november10Show = document.querySelector("#nov-10-show");
-november10Show.addEventListener("click", revealTextNov10);
-function revealTextNov10() {
-  document.getElementById("dayTen").style.color = "white";
-}
-const november10Hide = document.querySelector("#nov-10-hide");
-november10Hide.addEventListener("click", hideTextNov10);
-function hideTextNov10() {
-  document.getElementById("dayTen").style.color = "black";
-}
-
 // ------------November11----------------
 
 const november11ManOne =
@@ -605,18 +488,6 @@ ${november11ManEight}.
 let dayEleven = manOfNovember11(november11ManOne);
 console.log(dayEleven);
 document.getElementById("dayEleven").innerText = dayEleven;
-
-const november11Show = document.querySelector("#nov-11-show");
-november11Show.addEventListener("click", revealTextNov11);
-function revealTextNov11() {
-  document.getElementById("dayEleven").style.color = "white";
-}
-
-const november11Hide = document.querySelector("#nov-11-hide");
-november11Hide.addEventListener("click", hideTextNov11);
-function hideTextNov11() {
-  document.getElementById("dayEleven").style.color = "black";
-}
 
 // ------------November12----------------
 
@@ -660,18 +531,6 @@ let dayTwelve = manOfNovember12(november12ManOne);
 console.log(dayTwelve);
 document.getElementById("dayTwelve").innerText = dayTwelve;
 
-const november12Show = document.querySelector("#nov-12-show");
-november12Show.addEventListener("click", revealTextNov12);
-function revealTextNov12() {
-  document.getElementById("dayTwelve").style.color = "white";
-}
-
-const november12Hide = document.querySelector("#nov-12-hide");
-november12Hide.addEventListener("click", hideTextNov12);
-function hideTextNov12() {
-  document.getElementById("dayTwelve").style.color = "black";
-}
-
 // ------------November13----------------
 
 const november13ManOne =
@@ -700,18 +559,6 @@ let manOfNovember13 = () =>
 let dayThirteen = manOfNovember13(november13ManOne);
 console.log(dayThirteen);
 document.getElementById("dayThirteen").innerText = dayThirteen;
-
-const november13Show = document.querySelector("#nov-13-show");
-november13Show.addEventListener("click", revealTextNov13);
-function revealTextNov13() {
-  document.getElementById("dayThirteen").style.color = "white";
-}
-
-const november13Hide = document.querySelector("#nov-13-hide");
-november13Hide.addEventListener("click", hideTextNov13);
-function hideTextNov13() {
-  document.getElementById("dayThirteen").style.color = "black";
-}
 
 // ------------November14----------------
 
@@ -742,18 +589,6 @@ let dayFourteen = manOfNovember14(november14ManOne);
 console.log(dayFourteen);
 document.getElementById("dayFourteen").innerText = dayFourteen;
 
-const november14Show = document.querySelector("#nov-14-show");
-november14Show.addEventListener("click", revealTextNov14);
-function revealTextNov14() {
-  document.getElementById("dayFourteen").style.color = "white";
-}
-
-const november14Hide = document.querySelector("#nov-14-hide");
-november14Hide.addEventListener("click", hideTextNov14);
-function hideTextNov14() {
-  document.getElementById("dayFourteen").style.color = "black";
-}
-
 // ------------November15----------------
 
 const november15ManOne =
@@ -782,18 +617,6 @@ let manOfNovember15 = () =>
 let dayFifteen = manOfNovember15(november15ManOne);
 console.log(dayFifteen);
 document.getElementById("dayFifteen").innerText = dayFifteen;
-
-const november15Show = document.querySelector("#nov-15-show");
-november15Show.addEventListener("click", revealTextNov15);
-function revealTextNov15() {
-  document.getElementById("dayFifteen").style.color = "white";
-}
-
-const november15Hide = document.querySelector("#nov-15-hide");
-november15Hide.addEventListener("click", hideTextNov15);
-function hideTextNov15() {
-  document.getElementById("dayFifteen").style.color = "black";
-}
 
 // ------------November16----------------
 
@@ -824,18 +647,6 @@ let daySixteen = manOfNovember16(november16ManOne);
 console.log(daySixteen);
 document.getElementById("daySixteen").innerText = daySixteen;
 
-const november16Show = document.querySelector("#nov-16-show");
-november16Show.addEventListener("click", revealTextNov16);
-function revealTextNov16() {
-  document.getElementById("daySixteen").style.color = "white";
-}
-
-const november16Hide = document.querySelector("#nov-16-hide");
-november16Hide.addEventListener("click", hideTextNov16);
-function hideTextNov16() {
-  document.getElementById("daySixteen").style.color = "black";
-}
-
 // ------------November17----------------
 
 const november17ManOne =
@@ -865,18 +676,6 @@ let daySeventeen = manOfNovember17(november17ManOne);
 console.log(daySixteen);
 document.getElementById("daySeventeen").innerText = daySeventeen;
 
-const november17Show = document.querySelector("#nov-17-show");
-november17Show.addEventListener("click", revealTextNov17);
-function revealTextNov17() {
-  document.getElementById("daySeventeen").style.color = "white";
-}
-
-const november17Hide = document.querySelector("#nov-17-hide");
-november17Hide.addEventListener("click", hideTextNov17);
-function hideTextNov17() {
-  document.getElementById("daySeventeen").style.color = "black";
-}
-
 // ------------Sept17_2025----------------
 
 const september17_2025_One = "This is So UnCool!";
@@ -905,21 +704,6 @@ console.log(daySeventeenSeptember_2025);
 document.getElementById("daySeventeenSeptember2025").innerText =
   daySeventeenSeptember_2025;
 
-// Fixed variables and function names
-const sept_17_2025_Show = document.querySelector("#sept-17-2025_show");
-sept_17_2025_Show.addEventListener("click", revealTextSept17_2025);
-
-function revealTextSept17_2025() {
-  document.getElementById("daySeventeenSeptember2025").style.color = "white";
-}
-
-const sept_17_2025_Hide = document.querySelector("#sept-17-2025_hide");
-sept_17_2025_Hide.addEventListener("click", hideTextSept17_2025);
-
-function hideTextSept17_2025() {
-  document.getElementById("daySeventeenSeptember2025").style.color = "black";
-}
-
 // ============ STORE JAVASCRIPT CONTENT AFTER LOADING ============
 
 // After all the JavaScript stories have been written, store them
@@ -931,3 +715,56 @@ setTimeout(() => {
     }
   });
 }, 100);
+
+// ============ SETUP ALL EVENT LISTENERS ============
+document.addEventListener("DOMContentLoaded", () => {
+  // November dates
+  const dateMapping = [
+    { num: "1", dayId: "dayOne" },
+    { num: "2", dayId: "dayTwo" },
+    { num: "3", dayId: "dayThree" },
+    { num: "4", dayId: "dayFour" },
+    { num: "5", dayId: "dayFive" },
+    { num: "6", dayId: "daySix" },
+    { num: "7", dayId: "daySeven" },
+    { num: "8", dayId: "dayEight" },
+    { num: "9", dayId: "dayNine" },
+    { num: "10", dayId: "dayTen" },
+    { num: "11", dayId: "dayEleven" },
+    { num: "12", dayId: "dayTwelve" },
+    { num: "13", dayId: "dayThirteen" },
+    { num: "14", dayId: "dayFourteen" },
+    { num: "15", dayId: "dayFifteen" },
+    { num: "16", dayId: "daySixteen" },
+    { num: "17", dayId: "daySeventeen" },
+  ];
+
+  dateMapping.forEach(({ num, dayId }) => {
+    document
+      .getElementById(`nov-${num}-show-story`)
+      ?.addEventListener("click", () => showStory(dayId));
+    document
+      .getElementById(`nov-${num}-hide-story`)
+      ?.addEventListener("click", () => hideStory(dayId));
+    document
+      .getElementById(`nov-${num}-show-sonnet`)
+      ?.addEventListener("click", () => showSonnet(dayId));
+    document
+      .getElementById(`nov-${num}-hide-sonnet`)
+      ?.addEventListener("click", () => hideSonnet(dayId));
+  });
+
+  // September 17, 2025
+  document
+    .getElementById("sept-17-2025-show-story")
+    ?.addEventListener("click", () => showStory("daySeventeenSeptember2025"));
+  document
+    .getElementById("sept-17-2025-hide-story")
+    ?.addEventListener("click", () => hideStory("daySeventeenSeptember2025"));
+  document
+    .getElementById("sept-17-2025-show-sonnet")
+    ?.addEventListener("click", () => showSonnet("daySeventeenSeptember2025"));
+  document
+    .getElementById("sept-17-2025-hide-sonnet")
+    ?.addEventListener("click", () => hideSonnet("daySeventeenSeptember2025"));
+});
